@@ -10,4 +10,9 @@ if command -v live-server &>/dev/null; then
     exit
 fi
 
+if ! command -v npm &>/dev/null; then
+    warn 'command not found: npm'
+    warn 'live-server cannot be built'
+    exit 1
+fi
 npm install -g live-server
